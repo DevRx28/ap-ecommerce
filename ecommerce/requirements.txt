@@ -1,5 +1,4 @@
 django-oscar
-django_tables2
 sorl-thumbnail
 social-auth-app-django
 django-autocomplete-light
