@@ -60,14 +60,25 @@ Functionality should be consistent for any Posix-based system, although prior te
 	
 To avoid any compatibility issues, we recommend that this website be executed in a Posix-based system.
 
-First, download the zip archive from github. Extract it and navigate to the folder it was extracted to. Open a terminal window in that folder. Then run the following lines of code:
+First, download the zip archive from github. Extract it and navigate to the folder it was extracted to. Navigate to the "ecommerce" folder within it. You should be able to see a manage.py file. Open a terminal window in that folder. Then run the following lines of code:
 
-Prerequisites:
+###### Prerequisites:
+
 This website requires Java and solr to be installed for the autocomplete search backend to work. To install Java, run the following lines of code:
 
 ```
 sudo apt install default-jre
 sudo apt install default-jdk
+```
+
+###### Setting up the environment
+Run the following command to create a virtual environment and set up the dependencies.
+
+```
+virtualenv oscar
+source oscar/bin/activate
+pip install -r requirements.txt
+python manage.py makemigrations
 ```
 
 Then install solr using the following lines of code:
@@ -77,12 +88,13 @@ wget http://archive.apache.org/dist/lucene/solr/4.7.2/solr-4.7.2.tgz
 tar xzf solr-4.7.2.tgz
 ```
 
-Build the schema for solr using `python manage.py build_solr_schema > schema.xml` and then navigate to the solr directory using `cd solr-4.7.2/example` and start the java app using `java -jar start.jar`
+Build the schema for solr using `python manage.py build_solr_schema > solr-4.7.2/example/solr/collection1/conf/schema.xml` and then replace the file created `./solr-4.7.2/example/solr/collection1/conf/schema.xml` 
+Then navigate to the solr directory using `cd solr-4.7.2/example` and start the java app using `java -jar start.jar`
 
 Then in a different terminal window run the python environment and then start the server.
 
 ```
-source ./bin/activate
+source oscar/bin/activate
 python manage.py runserver
 ```
 
