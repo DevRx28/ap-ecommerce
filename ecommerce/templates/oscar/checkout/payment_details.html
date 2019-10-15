@@ -9,7 +9,7 @@
     {% include 'oscar/checkout/nav.html' with step=3 %}
 {% endblock %}
 
-{% block checkout_title %}{% trans "Enter payment details" %}{% endblock %}
+{% block checkout_title %}{% trans "Select Payment Mode" %}{% endblock %}
 
 {% block order_contents %}{% endblock %}
 {% block shipping_address %}{% endblock %}
@@ -18,13 +18,10 @@
 
 {% block payment_details %}
     {% block payment_details_content %}
-        <p>{% trans "This page needs implementing within your project.  You may want to use one of Oscar's payment gateway libraries:" %}</p>
-        <ul>
-            <li><a href="https://github.com/django-oscar/django-oscar-paypal">django-oscar-paypal</a></li>
-            <li><a href="https://github.com/django-oscar/django-oscar-adyen">django-oscar-adyen</a></li>
-            <li><a href="https://github.com/django-oscar/django-oscar-docdata">django-oscar-docdata</a></li>
-            <li><a href="https://github.com/django-oscar/django-oscar-accounts">django-oscar-accounts</a></li>
-        </ul>
+        <p>{% trans "Please select a payment method. We only have COD available right now." %}</p>
+        <form>
+            <input type = "radio" value = "radio_group" name = "Cash On Delivery" checked> Cash On Delivery
+        </form>
         <a id="view_preview" href="{% url 'checkout:preview' %}" class="btn btn-primary btn-lg">{% trans "Continue" %}</a>
     {% endblock payment_details_content %}
 {% endblock payment_details %}
