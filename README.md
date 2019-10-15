@@ -126,6 +126,9 @@ Once the Apache Solr server is running, use another terminal window or tab and r
 source ~/oscar/bin/activate
 python3 ~/oscar/ecommerce/manage.py rebuild_index
 ```
+
+Outside the terminal window, navigate to the `oscar/ecommerce` directory and copy the `cache` folder. Paste this folder in the `oscar` directory. After this, you should have two identical folders called `cache`, stored in both `oscar` and `oscar/ecommerce`. These correspond to different image caches in the project.
+
 Then run `python3 ~/oscar/ecommerce/manage.py runserver` to start the django server.
 
 Finally, navigate to either 127.0.0.1:8000 or localhost:8000 on your web browser and the website should be up and running.
