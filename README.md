@@ -33,8 +33,7 @@ Features:
 ######	II	SYSTEM REQUIREMENTS
 ######	III	INSTALLATION
 ######	IV	EXECUTION 
-######	V	SAMPLES
-######	VI	SUPPORT
+######	V	SUPPORT
 
 ####	I	PURPOSE
 
@@ -64,51 +63,73 @@ First, download the zip archive from github. Extract it and navigate to the fold
 
 ###### Prerequisites:
 
-First, navigate to your home directory.
+- Python 3
+- virtualenv
+- Java (OpenJDK or Oracle)
 
-This website requires Java and solr to be installed for the autocomplete search backend to work. To install Java and virtual envionment wrapper, run the following lines of code:
+If you do not have the above prerequisites installed, run the following commands.
 
 ```
-sudo apt install virtualenv
+sudo apt install python3
+sudo apt install virtualenv 
 sudo apt install default-jre
 sudo apt install default-jdk
 ```
 
 ###### Setting up the environment
-Run the following command to create a virtual environment and set up the dependencies.
+
+Step 1 -
+
+Navigate to your home directory (root) and enter the following commands to create the virtual environment.
 
 ```
 virtualenv oscar
-source oscar/bin/activate
+cd ~/oscar
+```
+Then activate the environment using:
+
+```
+source ./bin/activate
+```
+Once the environment is activated, create a copy of requirements.txt in the 'oscar' directory and run:
+
+```
 pip install -r requirements.txt
-python manage.py makemigrations
 ```
 
-Then install solr using the following lines of code:
+Once the 'oscar' directory is populated with the required libraries, create a local copy of the folders in this repository. This can be done through either git or downloading a zipped version. 
+
+Then, replace the contents of your local 'oscar' directory with the contents of this repo. This replacement is required because some libraries were edited at the source during the project's creation phase, and so must be shipped separately.
+
+Step 2 - 
+
+Deactivate your virtual environment using the `deactivate`. Then install Apache Solr using the following code:
 
 ```
-wget http://archive.apache.org/dist/lucene/solr/4.7.2/solr-4.7.2.tgz
-tar xzf solr-4.7.2.tgz
+wget http://archive.apache.org/dist/lucene/solr/4.7.2/solr-4.7.2.tgz	#Downloads the Solr package
+tar xzf solr-4.7.2.tgz		#Creates a local directory containing the Solr package
 ```
+Once Solr is installed, the search schema must be defined. 
 
-Build the schema for solr using `python manage.py build_solr_schema > solr-4.7.2/example/solr/collection1/conf/schema.xml` and then replace the file created `./solr-4.7.2/example/solr/collection1/conf/schema.xml` 
+Build the schema for solr using `python manage.py build_solr_schema > solr-4.7.2/example/solr/collection1/conf/schema.xml`.
+
+Since the latest version(s) of django-oscar create an unusable schema, this must be manually replaced with a working file.
+
+Download the `schema.xml` file in this repo and use it to replace the file located in:
+```./solr-4.7.2/example/solr/collection1/conf/schema.xml```
+
 Then navigate to the solr directory using `cd solr-4.7.2/example` and start the java app using `java -jar start.jar`
 
-Then in a different terminal window run the python environment and then start the server.
+Once the Apache Solr server is running, use another terminal window or tab and run the following commands to run the django server:
 
 ```
-source oscar/bin/activate
-python manage.py runserver
+source ~/oscar/bin/activate
+python ~/oscar/ecommerce/manage.py runserver
 ```
-
-Finally, navigate to localhost:8000 on your web browser and the website should be up and running.
-
-####	V	SAMPLES
-	
-Download and deploy the project and use the following ID for ordering as well as accessing the dashboard:
+Finally, navigate to either 127.0.0.1:8000 or localhost:8000 on your web browser and the website should be up and running.
 
 
-####	VI	SUPPORT
+####	V	SUPPORT
 	
 If you have issues with running the code or need technical support in general with
 issues relating to running the program, you can get in touch with the developers at:
