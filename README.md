@@ -54,11 +54,11 @@ This program aims to mimic an ecommerce website which can be deployed and scaled
 	
 This website does not require any installation as it comes with its own virtual environment with all packages installed.
 However, if you are running a windows machine, we recommend that you you install Ubuntu in a virtual machine by using either VirtualBox or Windows Hyper-V.
-We are not sure how this will behave for macOS but believe that the steps should be the same as for Ubuntu since both use bash in terminal.
+Functionality should be consistent for any Posix-based system, although prior testing has only been done on Ubuntu.
 	
 ####	IV	EXECUTION
 	
-To avoid any compatibility issues, we recommend that this website be executed in Ubuntu.
+To avoid any compatibility issues, we recommend that this website be executed in a Posix-based system.
 
 First, download the zip archive from github. Extract it and navigate to the folder it was extracted to. Open a terminal window in that folder. Then run the following lines of code:
 
