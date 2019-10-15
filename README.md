@@ -64,9 +64,12 @@ First, download the zip archive from github. Extract it and navigate to the fold
 
 ###### Prerequisites:
 
-This website requires Java and solr to be installed for the autocomplete search backend to work. To install Java, run the following lines of code:
+First, navigate to your home directory.
+
+This website requires Java and solr to be installed for the autocomplete search backend to work. To install Java and virtual envionment wrapper, run the following lines of code:
 
 ```
+sudo apt install virtualenv
 sudo apt install default-jre
 sudo apt install default-jdk
 ```
@@ -108,10 +111,10 @@ Download and deploy the project and use the following ID for ordering as well as
 ####	VI	SUPPORT
 	
 If you have issues with running the code or need technical support in general with
-issues relating to running the program, you can get in touch with the developers at
+issues relating to running the program, you can get in touch with the developers at:
 
-adhiraj.srivastava_asp20@ashoka.edu.in
-daksh.baheti_asp20@ashoka.edu.in
-devvrat.raghav_asp20@ashoka.edu.in
+adhiraj.srivastava_asp20@ashoka.edu.in, 
+daksh.baheti_asp20@ashoka.edu.in, 
+devvrat.raghav_asp20@ashoka.edu.in, 
 skzafar.ali_asp20@ashoka.edu.in
 
