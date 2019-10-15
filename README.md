@@ -17,14 +17,14 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Features:
-*Has about a hundred items listed for sale.
-*Users can create account/login using their email IDs or using Google oauth.
-*Users can edit their information from an edit profile page.
-*Users can view their ordered items.
-*Has modules like cart and wish-list where users can add/remove items.
-*Users can search for items using the search bar (with autocomplete). 
-*Users can see/add reviews to products.
-*Transactions are mocked using Cash on Delivery as a payment option.
+1. Has about a hundred items listed for sale.
+1. Users can create account/login using their email IDs or using Google oauth.
+1. Users can edit their information from an edit profile page.
+1. Users can view their ordered items.
+1. Has modules like cart and wish-list where users can add/remove items.
+1. Users can search for items using the search bar (with autocomplete). 
+1. Users can see/add reviews to products.
+1. Transactions are mocked using Cash on Delivery as a payment option.
 
 
 #### HOW TO USE THIS PROGRAM
