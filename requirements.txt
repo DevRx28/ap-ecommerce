@@ -1,0 +1,5 @@
+django-oscar
+sorl-thumbnail
+social-auth-app-django
+django-autocomplete-light
+pysolr
