@@ -94,7 +94,7 @@ source ./bin/activate
 Once the environment is activated, create a copy of requirements.txt in the 'oscar' directory and run:
 
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 Once the 'oscar' directory is populated with the required libraries, create a local copy of the folders in this repository. This can be done through either git or downloading a zipped version. 
@@ -111,7 +111,7 @@ tar xzf solr-4.7.2.tgz		#Creates a local directory containing the Solr package
 ```
 Once Solr is installed, the search schema must be defined. 
 
-Build the schema for solr using `python manage.py build_solr_schema > solr-4.7.2/example/solr/collection1/conf/schema.xml`.
+Build the schema for solr using `python3 ~/oscar/ecommerce/manage.py build_solr_schema > ~/oscar/solr-4.7.2/example/solr/collection1/conf/schema.xml`.
 
 Since the latest version(s) of django-oscar create an unusable schema, this must be manually replaced with a working file.
 
@@ -120,12 +120,14 @@ Download the `schema.xml` file in this repo and use it to replace the file locat
 
 Then navigate to the solr directory using `cd solr-4.7.2/example` and start the java app using `java -jar start.jar`
 
-Once the Apache Solr server is running, use another terminal window or tab and run the following commands to run the django server:
+Once the Apache Solr server is running, use another terminal window or tab and run the following commands to rebuild the Solr index:
 
 ```
 source ~/oscar/bin/activate
-python ~/oscar/ecommerce/manage.py runserver
+python3 ~/oscar/ecommerce/manage.py rebuild_index
 ```
+Then run `python3 ~/oscar/ecommerce/manage.py runserver` to start the django server.
+
 Finally, navigate to either 127.0.0.1:8000 or localhost:8000 on your web browser and the website should be up and running.
 
 
