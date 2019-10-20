@@ -116,7 +116,10 @@ Build the schema for solr using `python3 ~/oscar/ecommerce/manage.py build_solr_
 Since the latest version(s) of django-oscar create an unusable schema, this must be manually replaced with a working file.
 
 Download the `schema.xml` file in this repo and use it to replace the file located in:
+
 ```./solr-4.7.2/example/solr/collection1/conf/schema.xml```
+
+To enable fuzzy matching in search, repeat the above process for the `solrconfig.xml` file.
 
 Then navigate to the solr directory using `cd solr-4.7.2/example` and start the java app using `java -jar start.jar`
 
