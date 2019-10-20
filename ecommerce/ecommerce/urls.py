@@ -18,12 +18,12 @@ from django.urls import path, include, re_path
 from django.apps import apps
 from django.conf import settings
 from django.conf.urls.static import static
-from oscar.apps.search.views import SearchAutocomplete
+#from oscar.apps.search.views import SearchAutocomplete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
     path('', include(apps.get_app_config('oscar').urls[0])),
     path('accounts/login', include('social_django.urls', namespace='social')),
-    re_path(r'^autocomplete/', SearchAutocomplete, name='autocomplete')
+    #re_path(r'^autocomplete/', SearchAutocomplete, name='autocomplete')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
